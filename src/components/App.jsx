@@ -3,10 +3,12 @@ import { useState } from "react";
 
 
 function App() {
-    const groguPosition = []
-    const [eggs, setEggsNumber] = useState ("3");
-    const [frogs, setFrogsNumber] = useState("3")
-    const [cookies, setCookiesNumber] = useState ("3")
+    const [goodsCookies, setGoodsCookies] = useState(["🍪", "🍪", "🍪"]);
+    const [goodsEggs, setGoodsEggs] = useState(["🥚", "🥚", "🥚"]);
+    const [goodsFrog, setGoodsFrog] = useState(["🐸", "🐸", "🐸"]);
+    const [diceValue, setDiceValue] = useState(null);
+    const [gameStatus, setGameStatus] = useState("En curso");
+    const [groguPosition, setGroguPosition] = useState(0);
 
 
     return (
