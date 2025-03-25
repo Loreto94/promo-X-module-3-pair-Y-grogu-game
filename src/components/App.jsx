@@ -1,5 +1,9 @@
 import "../scss/App.scss";
 import { useState } from "react";
+import PropTypes from "prop-types";
+import Board from "./Board.jsx";
+import Header from "./Header.jsx";
+
 
 
 function App() {
@@ -14,10 +18,11 @@ function App() {
     return (
         <div>
             <header>
-                <h1>¡Cuidado con Grogu!</h1>
+                <h1>Cuidado</h1>
             </header>
             <main className="page">
-                <section className="board">
+                <Board/>
+                {/*<section className="board">
                     <div className="cell"><div className="grogu">👣</div></div>
                     <div className="cell"></div>
                     <div className="cell"></div>
@@ -25,7 +30,7 @@ function App() {
                     <div className="cell"></div>
                     <div className="cell"></div>
                     <div className="cell"></div>
-                </section>
+                </section>*/}
 
                 <section>
                     <button className="dice">Lanzar Dado</button>
