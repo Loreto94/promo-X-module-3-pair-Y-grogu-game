@@ -1,8 +1,9 @@
 import "../scss/App.scss";
 import { useState } from "react";
 import PropTypes from "prop-types";
-import Board from "./Board.jsx";
-import Header from "./Header.jsx";
+import Board from "./Board";
+import Header from "./Header";
+import Dice from "./Dice";
 
 
 
@@ -53,7 +54,7 @@ function App() {
                 <Board/>
 
                 <section>
-                    <button className="dice" onClick={rollDice}>Lanzar Dado</button>
+                <Dice onClickDice={rollDice}/>
                     <div className="game-status">{gameStatus}</div>
                 </section>
 

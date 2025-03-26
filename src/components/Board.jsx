@@ -1,5 +1,4 @@
 import "../scss/App.scss";
-import { useState } from "react";
 import Grogu from "./Grogu.jsx";
 import "../scss/components/Board.scss";
 
