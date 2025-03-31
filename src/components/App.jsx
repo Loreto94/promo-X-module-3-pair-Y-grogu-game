@@ -1,10 +1,9 @@
 import "../scss/App.scss";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import PropTypes from "prop-types";
 import Board from "./Board";
 import Header from "./Header";
 import Dice from "./Dice";
-
 
 
 function App() {
@@ -13,8 +12,8 @@ function App() {
     const [goodsFrog, setGoodsFrog] = useState(["🐸", "🐸", "🐸"]);
     const [diceValue, setDiceValue] = useState(null);
     const [gameStatus, setGameStatus] = useState("En curso");
-    const [groguPosition, setGroguPosition] = useState(0);
     const [lastAction, setLastAction] = useState("");
+    const [groguPosition, setGroguPosition] = useState(0);
 
     
     const rollDice = () => {
@@ -47,11 +46,33 @@ function App() {
             return goodsElements;
           };
 
+          useEffect(() => {
+            if (groguPosition === 6)
+          [setGoodsCookies, setGoodsEggs, setGroguPosition, setGoodsFrog]})
+          
+            useEffect(() => {
+              if (groguPosition === 6) 
+                return setGameStatus("¡¡Grogu se ha comido el cargamento!! Has perdido")
+              fetch("http://www.omdbapi.com/?s=indiana&apikey=1e85fab")
+                  .then(response => response.json())
+                  .then(data => {
+                      const moviesData = data.Search.map((movie) => {
+                          return {
+                              title: movie.Title,
+                              year: movie.Year,
+                              imageUrl: movie.Poster,
+                              id: movie.imdbID
+                          }
+                      })
+                      setMovies(moviesData);
+                  })
+          }, []) // se ejecute una sola vez, cuando se carga la página
+
     return (
         <div>
             <Header/>
             <main className="page">
-                <Board/>
+                <Board groguPosition={groguPosition}/>
 
                 <section>
                 <Dice onClickDice={rollDice}/>

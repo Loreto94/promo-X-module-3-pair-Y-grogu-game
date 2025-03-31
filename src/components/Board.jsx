@@ -1,15 +1,20 @@
 import "../scss/App.scss";
 import Grogu from "./Grogu.jsx";
 import "../scss/components/Board.scss";
-import { useState } from "react";
 
-function Board() {
+function Board({groguPosition}) {
+
     return (
         <section className="board">
             {
-                Array(7).fill().map(() => {
+                Array(7).fill().map((_, index) => {
                     return (
-                        <div className="cell"></div>
+                        <div key={index}
+                        className="cell">
+                            {
+                            index === groguPosition ? <Grogu /> : null 
+                            }
+                        </div>
                     );
                 })
             }
